@@ -1,19 +1,18 @@
 import { tpl, fnAlertMessage } from "./lib.js"
 
-export class Files {
+export class DataFiles {
     static sURL = ``
 
     static _oSelected = null;
     static _oSelectedCategory = null;
     
     static oURLs = {
-        create: 'ajax.php?method=create_file',
-        update: tpl`ajax.php?method=update_file&id=${0}`,
-        delete: 'ajax.php?method=delete_file',
-        list: tpl`ajax.php?method=list_files&category_id=${0}`,
+        create: 'ajax.php?method=create_data_file',
+        update: tpl`ajax.php?method=update_data_file&id=${0}`,
+        delete: 'ajax.php?method=delete_data_file',
+        list: tpl`ajax.php?method=list_data_files&category_id=${0}`,
 
-        list_tree_categories: `ajax.php?method=list_tree_categories`,
-        list_types: `ajax.php?method=list_types`,
+        list_types: `ajax.php?method=data_files_list_types`,
     }
     static oWindowTitles = {
         create: 'Новый файл',
@@ -22,7 +21,6 @@ export class Files {
     static oEvents = {
         files_save: "files:save",
         files_select: "files:select",
-        categories_select: "categories:select",
     }
 
     static get oDialog() {
@@ -38,9 +36,6 @@ export class Files {
         return $("#files-mm");
     }
 
-    static get oCategoryTreeList() {
-        return $("#files-category_id");
-    }
     static get oTypeList() {
         return $("#files-type");
     }
@@ -175,15 +170,9 @@ export class Files {
         //         fnSave();
         //     }
         // })
-
+        
         $(document).on(this.oEvents.files_select, ((oEvent, oNode) => {
-            
-        }).bind(this))
 
-        $(document).on(this.oEvents.categories_select, ((oEvent, oNode) => {
-            this._oSelectedCategory = oNode;
-            this.fnReloadLists();
-            this.fnReload();
         }).bind(this))
 
         this.oEditDialogSaveBtn.click((() => {
@@ -213,16 +202,6 @@ export class Files {
 
     static fnFireEvent_Select(oNode) {
         $(document).trigger(this.oEvents.files_select, [oNode])
-    }
-
-    static fnInitComponentCategoryTreeList()
-    {
-        this.oCategoryTreeList.combotree({
-            url: this.oURLs.list_tree_categories,
-            method: 'get',
-            labelPosition: 'top',
-            width: '100%',
-        })
     }
 
     static fnInitComponentTypeList()
@@ -276,7 +255,6 @@ export class Files {
     static fnPrepare()
     {
         this.fnBindEvents();
-        this.fnInitComponentCategoryTreeList();
         this.fnInitComponentTypeList();
         this.fnInitComponent()
     }

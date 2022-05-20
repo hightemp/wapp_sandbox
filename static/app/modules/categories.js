@@ -257,8 +257,8 @@ export class Categories {
 
     static fnPrepare()
     {
-        this.fnBindEvents();
         this.fnInitComponentCategoryTreeList();
         this.fnInitComponent()
+        this.fnBindEvents();
     }
 }

@@ -1,44 +1,68 @@
-<div class="easyui-layout" data-options="fit:true">
-    <div data-options="region:'west',split:true" title="" style="width:500px;">
         <div class="easyui-layout" data-options="fit:true">
-            <div data-options="region:'west',split:true" title="" style="width:200px;">
-                <div 
-                    class="easyui-panel" 
-                    title="  " 
-                    style="padding:0px;"
-                    data-options="tools:'#categories-tt', fit:true"
-                >
-                    <ul id="categories-tree" class="easyui-tree"></ul>
+            <div data-options="region:'west',split:true" title="" style="width:500px;">
+                <div id="tt" class="easyui-tabs" style="width:100%;height:100%;" data-options="fit:true">
+                    <div title="Файлы" style="padding:0px;display:none;">
+
+                        <div class="easyui-layout" data-options="fit:true">
+                            <div data-options="region:'west',split:true" title="" style="width:200px;">
+                                <div 
+                                    class="easyui-panel" 
+                                    title="  " 
+                                    style="padding:0px;"
+                                    data-options="tools:'#categories-tt', fit:true"
+                                >
+                                    <ul id="categories-tree" class="easyui-tree"></ul>
+                                </div>
+                                <div id="categories-tt">
+                                    <a href="javascript:void(0)" class="icon-add" id="categories-add-btn"></a>
+                                    <a href="javascript:void(0)" class="icon-edit" id="categories-edit-btn"></a>
+                                    <a href="javascript:void(0)" class="icon-remove" id="categories-remove-btn"></a>
+                                    <a href="javascript:void(0)" class="icon-reload" id="categories-reload-btn"></a>
+                                </div>
+                            </div>
+                            <div data-options="region:'center',title:'',iconCls:'icon-ok'">
+                                <div 
+                                    class="easyui-panel" 
+                                    title="  " 
+                                    style="padding:0px;"
+                                    data-options="tools:'#files-tt', fit:true"
+                                >
+                                    <ul id="files-list" class="easyui-datalist" title="" lines="true" data-options="fit:true"></ul>
+                                </div>
+                                <div id="files-tt">
+                                    <a href="javascript:void(0)" class="icon-ok" id="files-duplicate-btn"></a>
+                                    <a href="javascript:void(0)" class="icon-add" id="files-add-btn"></a>
+                                    <a href="javascript:void(0)" class="icon-edit" id="files-edit-btn"></a>
+                                    <a href="javascript:void(0)" class="icon-remove" id="files-remove-btn"></a>
+                                    <a href="javascript:void(0)" class="icon-reload" id="files-reload-btn"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div title="Данные" style="padding:0px;display:none;">
+                        <div 
+                            class="easyui-panel" 
+                            title="  " 
+                            style="padding:0px;"
+                            data-options="tools:'#files-tt', fit:true"
+                        >
+                            <ul id="data-files-list" class="easyui-datalist" title="" lines="true" data-options="fit:true"></ul>
+                        </div>
+                        <div id="files-tt">
+                            <a href="javascript:void(0)" class="icon-ok" id="files-duplicate-btn"></a>
+                            <a href="javascript:void(0)" class="icon-add" id="files-add-btn"></a>
+                            <a href="javascript:void(0)" class="icon-edit" id="files-edit-btn"></a>
+                            <a href="javascript:void(0)" class="icon-remove" id="files-remove-btn"></a>
+                            <a href="javascript:void(0)" class="icon-reload" id="files-reload-btn"></a>
+                        </div>
+                    </div>
                 </div>
-                <div id="categories-tt">
-                    <a href="javascript:void(0)" class="icon-add" id="categories-add-btn"></a>
-                    <a href="javascript:void(0)" class="icon-edit" id="categories-edit-btn"></a>
-                    <a href="javascript:void(0)" class="icon-remove" id="categories-remove-btn"></a>
-                    <a href="javascript:void(0)" class="icon-reload" id="categories-reload-btn"></a>
-                </div>
+
             </div>
             <div data-options="region:'center',title:'',iconCls:'icon-ok'">
-                <div 
-                    class="easyui-panel" 
-                    title="  " 
-                    style="padding:0px;"
-                    data-options="tools:'#files-tt', fit:true"
-                >
-                    <ul id="files-list" class="easyui-datalist" title="" lines="true" data-options="fit:true"></ul>
-                </div>
-                <div id="files-tt">
-                    <a href="javascript:void(0)" class="icon-add" id="files-add-btn"></a>
-                    <a href="javascript:void(0)" class="icon-edit" id="files-edit-btn"></a>
-                    <a href="javascript:void(0)" class="icon-remove" id="files-remove-btn"></a>
-                    <a href="javascript:void(0)" class="icon-reload" id="files-reload-btn"></a>
-                </div>
+                <div id="tabs" class="easyui-tabs" style="width:100%;height:100%"></div>
             </div>
         </div>
-    </div>
-    <div data-options="region:'center',title:'',iconCls:'icon-ok'">
-        <div id="tabs" class="easyui-tabs" style="width:100%;height:100%"></div>
-    </div>
-</div>
 
 <div style="position:fixed">
     <!-- Категории -->
@@ -113,6 +137,7 @@ import * as m from "./static/app/modules/__init__.js";
 $(document).ready(() => {
     m.Categories.fnPrepare();
     m.Files.fnPrepare();
+    m.DataFiles.fnPrepare();
     m.RightTabs.fnPrepare();
 })
 </script>

@@ -24,7 +24,7 @@ services:
     environment:
       TZ: ${WORKSPACE_TIMEZONE}
     env_file:
-      - ./docker/.env
+      - ./.env
     networks:
       - nw_wapp_sandbox
 
@@ -46,6 +46,6 @@ services:
     environment:
       TZ: ${WORKSPACE_TIMEZONE}
     env_file:
-      - ./docker/.env
+      - ./.env
     networks:
       - nw_wapp_sandbox

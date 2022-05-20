@@ -27,7 +27,7 @@ $sContent = fnGetFileContentByID($_GET['id']);
             style="padding:0px;"
             data-options="tools:'#output-tt', fit:true"
         >
-            <iframe id="output" src="/js_output.php?file=<?php echo urlencode($sFilePath) ?>"></iframe>
+            <iframe id="output" src="<?php echo $sBase ?>/js_output.php?file=<?php echo urlencode($sFilePath) ?>"></iframe>
         </div>
         <div id="output-tt">
             <a href="javascript:void(0)" class="icon-reload" id="output-reload-btn"></a>
@@ -41,4 +41,4 @@ import * as lib from './static/app/modules/lib.js'
 window.iID = <?php echo $_GET['id']; ?>;
 window.oE = lib.fnCreateEditor("editor", "js");
 </script>
-<script src="/static/app/editor_tab_init.js"></script>
+<script src="<?php echo $sBase ?>/static/app/editor_tab_init.js"></script>

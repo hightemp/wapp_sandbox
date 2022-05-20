@@ -36,13 +36,15 @@ export function fnCreateEditor(sEditorID, sType="js", sContent=null, oOptions={}
     var oEditor = ace.edit(sACEEditorID);
 
     oEditor.focus();
-    oEditor.gotoLine(3, 0);
+    // oEditor.gotoLine(3, 0);
+    // oEditor.searchBox.show();
 
     // set mode
     if (sType="php") {
         var PhpMode = require("ace/mode/php").Mode;
         oEditor.getSession().setMode(new PhpMode());
-    } else if (sType="js") {
+    } 
+    if (sType="js") {
         var JSMode = require("ace/mode/javascript").Mode;
         oEditor.getSession().setMode(new JSMode());
     }

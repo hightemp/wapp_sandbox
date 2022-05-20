@@ -24,7 +24,6 @@ if (isset($_GET['editor'])) {
     <link rel="shortcut icon" href="<?php echo $sBase ?>/static/app/favicon.png" type="image/png">
 
     <script src="<?php echo $sBA ?>/ace/ace.js" charset="utf-8"></script>
-    <script src="<?php echo $sBA ?>/ace/mode-php.js" charset="utf-8"></script>
 
     <link rel="stylesheet" type="text/css" href="<?php echo $sB ?>/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $sB ?>/themes/icon.css">
@@ -33,8 +32,15 @@ if (isset($_GET['editor'])) {
     <script type="text/javascript" src="<?php echo $sB ?>/jquery.easyui.min.js"></script>
 
     <script type="text/javascript" src="<?php echo $sBA ?>/ace/ace.js"></script>
+
     <script type="text/javascript" src="<?php echo $sBA ?>/ace/mode-php.js"></script>
     <script type="text/javascript" src="<?php echo $sBA ?>/ace/worker-php.js"></script>
+
+    <script type="text/javascript" src="<?php echo $sBA ?>/ace/mode-javascript.min.js"></script>
+    <script type="text/javascript" src="<?php echo $sBA ?>/ace/worker-javascript.min.js"></script>
+
+    <script type="text/javascript" src="<?php echo $sBA ?>/ace/ext-code_lens.min.js"></script>
+    <script type="text/javascript" src="<?php echo $sBA ?>/ace/ext-searchbox.min.js"></script>
 
     <script type="text/javascript" src="<?php echo $sBA ?>/all.js"></script>
 

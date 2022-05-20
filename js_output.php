@@ -1,3 +1,6 @@
+<?php
+include_once("./config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,5 +21,5 @@ pre {
 }
 </style> 
 
-<script src="/static/app/js_editor_init.js"></script>
-<script src="<?php echo $_GET['file']; ?>"></script>
+<script src="<?php echo $sBase ?>/static/app/js_editor_init.js"></script>
+<script src="<?php echo $sBase ?><?php echo $_GET['file']; ?>"></script>

@@ -6,6 +6,7 @@ include_once("./config.php");
 
 define('T_CATEGORIES', 'tcategories');
 define('T_FILES', 'tfiles');
+define('T_DATA_FILES', 'tdatafiles');
 
 define('T_TAGS', 'ttags');
 define('T_TAGS_TO_OBJECTS', 'ttagstoobjectss');

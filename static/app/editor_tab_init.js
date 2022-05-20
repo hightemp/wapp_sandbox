@@ -8,7 +8,19 @@ function fnSave()
         },
         () => {},
         'json'
-    );
+    ).done(() => {
+        $.messager.show({
+            title: 'Сохранено',
+            msg: 'Сохранено',
+            showType: 'show',
+            style:{
+                left:'',
+                right:0,
+                top:document.body.scrollTop+document.documentElement.scrollTop,
+                bottom:''
+            }
+        });
+    })
 }
 
 function fnReloadOutput()

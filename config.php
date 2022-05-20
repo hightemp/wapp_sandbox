@@ -30,7 +30,7 @@ define('DATA_PHP_FILE_PATH', __DIR__."/data/files/js");
 define('DATA_JS_FILES_PATH', __DIR__."/data/files/php");
 
 include_once("./lib.php");
-include_once("rb.php");
+include_once("./rb.php");
 
 include_once("./models/files.php");
 include_once("./models/tags.php");

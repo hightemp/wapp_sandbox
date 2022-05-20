@@ -147,6 +147,19 @@ export class RightTabs {
             }
         ).done((() => {
             this.fnUnsetDirtyNote(this.oTabsFilesPHPIDs[iI]);
+            alert('123');
+
+            $.messager.show({
+                title: 'Сохранено',
+                msg: 'Сохранено',
+                showType:'show',
+                style:{
+                    left:'',
+                    right:0,
+                    top:document.body.scrollTop+document.documentElement.scrollTop,
+                    bottom:''
+                }
+            });
         }).bind(this))
     }
 
@@ -163,11 +176,24 @@ export class RightTabs {
             }
         ).done((() => {
             this.fnUnsetDirtyTable(this.oTabsFilesJSIDs[iI]);
+
+            $.messager.show({
+                title: 'Сохранено',
+                msg: 'Сохранено',
+                showType: 'show',
+                style:{
+                    left:'',
+                    right:0,
+                    top:document.body.scrollTop+document.documentElement.scrollTop,
+                    bottom:''
+                }
+            });
         }).bind(this))
     }
 
     static fnSelectByID(iID)
     {
+        console.log(iID);
         if (this.oTabsFilesPHPIndexes[iID]) {
             this.fnSelect(this.oTabsFilesPHPIndexes[iID]);
         } else if (this.oTabsFilesJSIndexes[iID]) {
@@ -210,7 +236,7 @@ export class RightTabs {
 
     static fnPrepare()
     {
-        this.fnBindEvents();
         this.fnInitComponent();
+        this.fnBindEvents();
     }
 }
